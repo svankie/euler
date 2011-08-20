@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import time
+
 def calculate_score(text):
     """ project euler #22: calculates the total of all name scores in ´text´. """
     alphabet = '.abcdefghijklmnopqrstuvwxyz'
@@ -11,4 +13,8 @@ def calculate_score(text):
     return sum(vbag)
 
 if __name__ == '__main__':
-    print calculate_score(open('names.txt').read())
+    text = open('names.txt').read()
+    t1 = time.time()
+    score = calculate_score(text)
+    t2 = time.time()
+    print "The calculation took", t2 - t1, "seconds to run."
